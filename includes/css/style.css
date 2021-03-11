@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Lora';
+    src: url('./includes/font/Lora-Regular.ttf'); /* format('truetype'); */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    border: 1px solid red;
+    min-height: 100vh;    
+}
+
+body {
+    background-color: rgb(180, 153, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Lora', serif;
+}
+
+header {
+    background-color: lightgray;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 3px 3px gray;
+}
+
+header a {
+    text-decoration: none;
+    background-color: rgb(135, 138, 0);
+    line-height: 32px;
+    padding: 10px;
+    border-radius: 5px;
+    color: gainsboro;
+}
+
+.index__column-right {
+    border: 1px solid blue;
+    background-color: whitesmoke;
+    width: 33.33%;
+    float: right;
+}
+
+.index__column-right > div {
+    border: 1px solid green;
+    width: 80%;
+    margin: 0 auto; /* centrado horizontal */
+}
+
+.index__column-right__logo {
+    border: 1px solid black;
+    width: 80%;   
+    display: block; /* para centrar */
+    margin: auto; /* centrar */
+}
+
+.index__column-right__leyend-1 {
+    font-size: 36pt;
+    color: rgb(139, 119, 0);
+    margin-top: 40px;
+}
+
+hr {
+    /* border: 1px solid red; */
+    background-color: black;
+    width: 80%;
+    height: 3pt;
+    margin: 20px;
+}
+
