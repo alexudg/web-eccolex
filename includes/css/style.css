@@ -10,7 +10,7 @@
 }
 
 html {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     min-height: 100vh;    
 }
 
@@ -23,15 +23,19 @@ body {
 header {
     background-color: lightgray;
     width: 100%;
-    height: 100px;
-    padding: 10px;
+    height: 70px;
+    padding: 30px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 3px 3px gray;
+    justify-content: space-between; /* (display:flex) */
+    align-items: center; /* (display:flex) centrado vertical */
+    box-shadow: 0 0 3px 3px silver;
 }
 
-header a {
+header img {
+    width: 150px;
+}
+
+nav a {
     text-decoration: none;
     background-color: rgb(135, 138, 0);
     line-height: 32px;
@@ -40,28 +44,69 @@ header a {
     color: gainsboro;
 }
 
-.index__column-right {
-    border: 1px solid blue;
+.index__column-right, .index__column-left {
+    /* border: 1px solid blue; */
     background-color: whitesmoke;
-    width: 33.33%;
+    width: 512px; 
+    height: 1250px;
+    padding: 0 32px;
+    margin: 10px;  
+    border-radius: 20px; 
+    box-shadow: 0 0 3px 3px silver;
+}
+
+
+.index__column-left {
+    float: left;
+}
+
+.index__column-right {
     float: right;
 }
 
-.index__column-right > div {
-    border: 1px solid green;
-    width: 80%;
-    margin: 0 auto; /* centrado horizontal */
+.index__column-left__paragraph-1 {
+    font-size: 24pt;
+    margin-top: 20px;
+}
+
+.index__column-left__paragraph-1 > span {
+    /* color: red; */
+    font-size: 36pt;
+    font-weight: 400;
+}
+
+.index__column-left__img {
+    width: 100%;
+}
+
+.index__column-left__paragraph-2, 
+.index__column-left__paragraph-3,
+.index__column-left__paragraph-4 {
+    text-align: justify;
+    font-size: 14pt;
+    text-indent: 60px;
+    margin-top: 40px;
+}
+
+.index__column-left__paragraph-2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.index_column-left__capital {
+    /* color: red; */
+    font-size: 20pt;
 }
 
 .index__column-right__logo {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 80%;   
     display: block; /* para centrar */
-    margin: auto; /* centrar */
+    margin: auto; /* (display: block) centrado horizontal */
 }
 
-.index__column-right__leyend-1 {
-    font-size: 36pt;
+.index__column-right__paragraph-1 {
+    font-size: 50pt;
     color: rgb(139, 119, 0);
     margin-top: 40px;
 }
@@ -74,3 +119,20 @@ hr {
     margin: 20px;
 }
 
+.index__column-right__paragraph-1 {
+    font-size: 50pt;
+    color: rgb(139, 119, 0);
+    margin: 0;
+    /* margin-top: 60px; */
+}
+
+.index__column-right__paragraph-2 {
+    font-size: 14pt;
+    margin-bottom: 40px;  
+}
+
+.index__column-right__paragraph-2 > span {
+    /* color: red; */
+    font-size: 20pt;
+    font-weight: 400;
+}
