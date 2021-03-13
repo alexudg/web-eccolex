@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Lora';
-    src: url('./includes/font/Lora-Regular.ttf'); /* format('truetype'); */
+    src: url('/includes/font/Lora-Regular.ttf'); /* format('truetype'); */
 }
 
 * {
