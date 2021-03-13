@@ -1,0 +1,119 @@
+main {
+    /* border: 1px solid red; */
+    background-color: rgb(180, 153, 0);
+    display: flex;
+    justify-content: space-around; /* (display: flex) */    
+}
+
+.column-left,
+.column-right  {
+    /* border: 1px solid blue; */
+    background-color: whitesmoke;    
+    padding: 0 32px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 6px 3px silver; /* x y difuminado longitud color */
+}
+
+.column-left {
+    max-width: 720px;
+}
+
+.column-right {
+    max-width: 720px;
+}
+
+
+.column-left__paragraph-1 {
+    font-size: 24pt;
+    margin-top: 20px;
+}
+
+.column-left__paragraph-1 > span {
+    /* color: red; */
+    font-size: 36pt;
+    font-weight: 500;
+}
+
+.column-left__img {
+    width: 100%;
+}
+
+.column-left__paragraph-2,
+.column-left__paragraph-3,
+.column-left__paragraph-4 {
+    text-align: justify;
+    font-size: 14pt;
+    text-indent: 60px;
+    margin-bottom: 40px;
+}
+
+.column-left__paragraph-3 {
+    margin-top: 40px;    
+}
+
+.index_column-left__capital {
+    /* color: red; */
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+.column-right__logo {
+    /* border: 1px solid black; */
+    width: 80%;
+    display: block; /* para centrar */
+    margin: auto; /* (display: block) centrado horizontal */
+}
+
+.column-right__paragraph-1 {
+    font-size: 42pt;
+    color: rgb(139, 119, 0);
+    margin: 0;
+    /* margin-top: 60px; */
+}
+
+hr {
+    /* border: 1px solid red; */
+    background-color: black;
+    width: 80%;
+    height: 3pt;
+    margin: 20px;
+}
+
+.column-right__paragraph-2 {
+    font-size: 11pt;
+    margin-bottom: 40px;
+}
+
+.column-right__paragraph-2 > span {
+    /* color: red; */
+    font-size: 15pt;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1023px) {
+    main {
+        flex-direction: column-reverse; /* girar el eje */
+        align-items: center; /* centrado horizontal */
+    }
+    
+    .column-left__paragraph-1 {
+        font-size: 14pt;
+    }
+
+    .column-left__paragraph-1 > span {
+        font-size: 22pt;
+    }
+
+    .column-right__paragraph-1 {
+        font-size: 24px;
+    }
+
+    .column-right__paragraph-2 {
+        font-size: 9pt;
+    }
+
+    .column-right__paragraph-2 > span {
+        font-size: 13pt;
+    }
+}
