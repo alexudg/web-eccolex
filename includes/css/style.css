@@ -125,13 +125,13 @@ hr {
 }
 
 .index__column-right__paragraph-2 {
-    font-size: 13pt;
+    font-size: 10pt;
     margin-bottom: 40px;
 }
 
 .index__column-right__paragraph-2 > span {
     /* color: red; */
-    font-size: 20pt;
+    font-size: 15pt;
     font-weight: 500;
 }
 
