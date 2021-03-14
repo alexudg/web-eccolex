@@ -41,7 +41,7 @@ main {
     /* border: 1px solid red; */
     width: 60%;
     /* height: 150px; */
-    background-image: url("../../img/edificios1100x615px.png");  
+    background-image: url("../../img/edificios1100x615px.png"); /* desde la ubicacion de este .css */ 
     background-size: 100%;
     background-position: center 70%; /* x y */
     background-repeat: no-repeat;   
@@ -81,7 +81,7 @@ main {
 .row-tryptich > div {
     border: 1px solid black;
     width: 33.33%;
-    height: 500px;
+    /* height: 500px; */
     padding-left: 15px;
 }
 
