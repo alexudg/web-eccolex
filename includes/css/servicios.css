@@ -40,7 +40,7 @@ s
     /* border: 1px solid red; */
     width: 60%;
     /* height: 159px; */
-    background-image: url("./img/edificios1100x615px.png");  
+    background-image: url("img/edificios1100x615px.png");  
     background-size: 100%;
     background-position: center 70%; /* x y */
     background-repeat: no-repeat;   
