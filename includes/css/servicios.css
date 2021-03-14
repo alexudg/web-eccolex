@@ -25,21 +25,22 @@ main {
 .row-top__paragraph > img {
     display: block;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto; /* (display:block) centrado horizontal */
 }
-s
-.row-top__paragraph > p {
-    /* border: 1px solid red; */
+
+.row-top__paragraph p {
+    /* border: 1px solid red;
+    color: red; */
     width: 90%;
     font-weight: 550;
     margin-left: 8%;
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
 }
 
 .row-top__img {
     /* border: 1px solid red; */
     width: 60%;
-    /* height: 159px; */
+    /* height: 150px; */
     background-image: url("/img/edificios1100x615px.png");  
     background-size: 100%;
     background-position: center 70%; /* x y */
@@ -49,7 +50,7 @@ s
 .row-subtop {
     /* border: 1px solid blue; */
     position: relative; /* super ponser a la sombra del parrafo sup-izq*/
-    margin-top: -23px;
+    margin-top: -22px;
 }
 
 .row-subtop > img {
