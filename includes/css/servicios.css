@@ -43,42 +43,53 @@ main {
     background-image: url("/img/edificios1100x615px.png");  
     background-size: 100%;
     background-position: center 70%; /* x y */
-    background-repeat: no-repeat;
-   
-}
-.row-titles {
-    border: 1px solid red;
-    background-image: url('/img/banda-rugosa1920x155px.png');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 20px 0;
-    position: relative; /* superponerse a la sombra del parrafo sup-izq */
-    margin-top: -20px;
-    display: flex;
+    background-repeat: no-repeat;   
 }
 
-.row-trip {
-    border: 1px solid blue;
+.row-subtop {
+    /* border: 1px solid blue; */
+    position: relative; /* super ponser a la sombra del parrafo sup-izq*/
+    margin-top: -23px;
 }
-/* .row-center__band {
-    width: 100%; 
-    height: 80px;
+
+.row-subtop > img {
     display: block;
-    margin-top: -22px;
-    margin-right: auto;
-    position: relative; /* superponerse al sombreado del 1er parrafo izq */    
-/*} */
+    width: 100%;
+    height: 80px;    
+}
 
-.row-titles > p {
-    border: 1px solid black;
+.row-subtop__titles {
+    /* border: 1px solid red; */
+    margin-top: -60px;
+    display: flex;    
+}
+
+.row-subtop__titles > p {
+    /* border: 1px solid black; */
     width: 33.33%;
     font-weight: 600;
+    padding-left: 15px;        
 }
 
+.row-tryptich {
+    border: 1px solid green;
+    margin-top: 20px;
+    display: flex;
+} 
 
-/* .row-center > div {
+.row-tryptich > div {
     border: 1px solid black;
     width: 33.33%;
     height: 500px;
-} */
+    padding-left: 15px;
+}
+
+.row-tryptich > div > p {
+    color: rgb(138, 112, 0);
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.row-tryptich > div > ul {
+    margin-left: 15px;
+}
