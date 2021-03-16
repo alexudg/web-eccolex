@@ -1,14 +1,13 @@
 main {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0 auto; /* centrar */
     max-width: 1320px;
-    min-height: 80vh;
     display: flex;    
 }
 
 .map,
 .form {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     background-color: gainsboro;
     margin: 30px;
     padding: 20px;
@@ -83,6 +82,12 @@ input[type=submit] {
     display: none;
 }
 
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
 @media only screen and (max-width: 1023px) {
     main {
         flex-direction: column;  /* girar eje */
@@ -97,5 +102,9 @@ input[type=submit] {
     
     .form {
         width: 300px;
+    }
+
+    footer {
+        position: static;
     }
 }
