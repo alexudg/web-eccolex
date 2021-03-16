@@ -2,7 +2,7 @@ main {
     border: 1px solid black;
     margin: 0 auto; /* centrar */
     max-width: 1320px;
-    min-height: 70vh;
+    min-height: 80vh;
     display: flex;    
 }
 
