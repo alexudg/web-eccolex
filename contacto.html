@@ -30,7 +30,7 @@
                 <input type="number" name="tel" placeholder="Whatsapp">
                 <textarea name="message" placeholder="*Mensaje"></textarea>
                 <p>* campos obligatorios.</p>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar" id="submit">
                 <p class="result" id="result">Result</p>
             </form>            
         </section>
@@ -59,7 +59,10 @@
         //console.log('submit()')
         //console.log(eve.target)
         
-        let isSended = true
+        submit.disabled = true
+        submit.style.backgroundColor = "silver"
+        submit.value = "Espera..."
+
 
         // smtp.js
         Email.send({
@@ -99,7 +102,12 @@
                 result.style.display = "block"
                 
                 // ocultar resultado a los 5 seg
-                setTimeout(() => result.style.display = "none", 5000)
+                setTimeout(() => {
+                    submit.value = "Enviar"
+                    submit.disabled = false
+                    submit.style.backgroundColor = "rgb(135, 138, 0)"
+                    result.style.display = "none"
+                }, 5000)
             }
         );
     }
