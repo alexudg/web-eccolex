@@ -64,8 +64,8 @@ main {
     padding-bottom: 25px; 
 } 
 
-.row-tryptich div {
-    padding-left: 15px;
+.row-tryptich > div {
+    padding: 0 15px;
 }
 
 .row-tryptich p {
