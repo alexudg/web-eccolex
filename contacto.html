@@ -59,9 +59,10 @@
         //console.log('submit()')
         //console.log(eve.target)
         
+        // deshabilitar boton y mostrar que espere        
         submit.disabled = true
-        submit.style.backgroundColor = "silver"
         submit.value = "Espera..."
+        submit.style.backgroundColor = "silver"
 
 
         // smtp.js
@@ -99,6 +100,7 @@
                     result.innerHTML = 'Error al enviar mensaje!'
                     result.style.backgroundColor = "salmon"
                 }             
+                // mostrar mensaje
                 result.style.display = "block"
                 
                 // ocultar resultado a los 5 seg
