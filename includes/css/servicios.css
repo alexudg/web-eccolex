@@ -19,7 +19,7 @@ main {
     /* border: 1px solid brown; */
     width: 40%;
     padding-top:  5px;
-    box-shadow: 12.5px 0 25px 12.5px whitesmoke;
+    box-shadow: 12.5px 0 25px 25px whitesmoke;
     position: relative; /* eleva la sombra sobre la imagen de la der */    
 }
 
