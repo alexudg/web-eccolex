@@ -1,0 +1,100 @@
+main {
+    border: 1px solid black;
+    margin: 0 auto; /* centrar */
+    max-width: 1320px;
+    display: flex;    
+}
+
+.map,
+.form {
+    border: 1px solid blue;
+    background-color: gainsboro;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 5px;       
+}
+
+.map {
+    width: 70%;
+}
+
+.map > iframe {
+    width: 100%;
+    height: 100%;    
+    border: none;
+}
+
+.form {
+    width: 30%;
+}
+
+.form > h3 {
+    text-align: center;    
+}
+
+.form > p {
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+form {
+    border: 1px solid gray;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    margin: 5px 0;
+    padding: 5px;
+    border: 0.1px solid gray;
+    border-radius: 5px;    
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    margin: 5px 0;
+    padding: 5px;
+    font-family: 'Arial';
+    resize: none; /* sin modificador de dimensiones */
+    border-radius: 5px;
+}
+
+form > p {
+    font-family: Arial;
+    font-size: 11px;
+}
+
+input[type=submit] {
+    background-color: rgb(135, 138, 0);
+    height: 40px;
+}
+
+.result {
+    background-color: aquamarine;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+@media only screen and (max-width: 1023px) {
+    main {
+        flex-direction: column;  /* girar eje */
+        align-items: center; /* centrado horizontal */
+    }
+
+    .map {
+        width: 95%;
+        max-width: 600px;
+        height: 55vh;
+    }
+    
+    .form {
+        width: 300px;
+    }
+}

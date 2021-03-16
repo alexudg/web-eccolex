@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECCOLEX</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./includes/css/style.css">
+    <link rel="stylesheet" href="./includes/css/contacto.css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="./img/logoTextoDerechaSinFondo256x108px.png" alt="logotipo"></a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.117704363587!2d-103.35531738541776!3d20.6647898054803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b201f1563d2f%3A0x4b501d2d475e09d0!2sCalle%20Donato%20Guerra%20762%2C%20Moderna%2C%2044190%20Guadalajara%2C%20Jal.!5e0!3m2!1sen!2smx!4v1615927259146!5m2!1sen!2smx" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+        <section class="form">
+            <h3>Contáctanos</h3>
+            <p>Envíanos un mensaje y te contestaremos en menos de 24 horas.</p>
+            <form action="post">
+                <input type="text" name="name" placeholder="*Nombre" required>
+                <input type="email" name="email" placeholder="*Correo" required>
+                <input type="number" name="tel" placeholder="Whatsapp">
+                <textarea name="message" placeholder="*Mensaje"></textarea>
+                <p>* campos obligatorios.</p>
+                <input type="submit" value="Enviar">
+                <p class="result" id="result">Result</p>
+            </form>            
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-left">
+                <nav>
+                    <a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="#">Contacto</a>
+                </nav>
+                <a href="https://api.whatsapp.com/send?phone=523334408509&text=Visito su sitio web, me interesan su servicios" target="_blank"><img src="./img/whatsapp24px.png" alt="whatsapp"></a>
+            </div>
+            <div class="footer-right">
+                <p>Tel. 3314631774</p>
+                <a href="mailto: eccolexasesores@gmail.com">eccolexasesores@gmail.com</a>
+            </div>
+        </div>
+        <p>Todos los recursos son propiedad de <span class="footer__eccolex">ECCOLEX &copy;</span> <br class="footer__lineBreak"/></span>2020-<span id="currentYear"></span></p>
+    </footer>
+</body>
+<script src="/includes/js/smtp.js"></script>
+<script>
+    let form = document.forms[0]
+    form.onsubmit = (eve) => {
+        eve.preventDefault();
+        //console.log('submit()')
+        //console.log(eve.target)
+        
+        let isSended = true
+
+        // smtp.js
+        Email.send({
+            // Host: 'smtp.gmail.com',
+            // Username: 'eccolexasesores',
+            // Password: 'Jalisco01',
+
+            //SecureToken = Host + Username + Password
+            SecureToken: '5eed754f-1072-4ead-a3f9-2832539564ca', // creado en smtpjs.com
+            To: 'eccolexasesores@gmail.com',
+            From: form.email.value,
+            Subject: 'Correo desde eccolex.tk',
+            Body: 'De: ' + form.name.value + '<br/>' + 
+                  'Correo: ' + form.email.value + '<br/>' + 
+                  'Whatsapp: ' + form.tel.value + '<br/>' +
+                  '<hr/>' + 
+                  form.message.value,       
+                
+                // datos adjuntos   
+                /*Attachments : [
+	            {
+		            name : "smtpjs.png",
+		            path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+	            }]*/        
+        }).then(
+            message => {
+                //console.log(message)
+                form.reset();
+                if (message == 'OK') {
+                    result.innerHTML = 'Mensaje enviado!'
+                    result.style.backgroundColor = "aquamarine"
+                }   
+                else {
+                    result.innerHTML = 'Error al enviar mensaje!'
+                    result.style.backgroundColor = "salmon"
+                }             
+                result.style.display = "block"
+                
+                // ocultar resultado a los 5 seg
+                setTimeout(() => result.style.display = "none", 5000)
+            }
+        );
+    }
+    currentYear.innerHTML = new Date().getFullYear().toString();    
+</script>
+</html>        
