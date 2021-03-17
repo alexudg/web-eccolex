@@ -38,8 +38,7 @@ main {
 .row-top__img {
     /* border: 1px solid red; */
     width: 60%;
-    /* height: 150px; */
-    background-image: url("../../includes/img/edificios1100x615px.png"); /* desde la ubicacion de este .css */ 
+    /*background-image: url("<path>"); /* desde la ubicacion de este .css; es mejor desde html */ 
     background-size: 100%;
     background-position: center 70%; /* x y */
     background-repeat: no-repeat;   
