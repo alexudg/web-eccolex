@@ -65,7 +65,7 @@
         submit.style.backgroundColor = "silver"
 
         // smtp.js
-        let mailNo = 0
+        let mailNo = 1
         let to, host, username, password, securetoken
         switch (mailNo) {
             case 0:
@@ -80,14 +80,14 @@
                 // host = 'smtp.live.com'
                 // username = to
                 // password = 'univers=I0674'
-                securetoken = '46f761cf-29ff-46d0-a369-90c2a9c63bd1'
+                securetoken = 'f96ce58c-8519-4993-8a6c-5106b2278de3' // (port 587)
                 break
             case 2:
                 to = 'consultoriaeccolex@hotmail.com'
                 // host = 'smtp.live.com' 
                 // username = to
                 // password = '<secret>'
-                securetoken = 'ec192db7-f075-4ad7-9d93-e4c6f6c4b838' // (port 542)
+                securetoken = 'ec192db7-f075-4ad7-9d93-e4c6f6c4b838' // (port 587)
                 break
         }
         Email.send({
