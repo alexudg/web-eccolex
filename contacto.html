@@ -64,53 +64,94 @@
         submit.value = "Espera..."
         submit.style.backgroundColor = "silver"
 
-        // smtp.js
-        let mailNo = 0
-        let to, host, username, password, securetoken
-        switch (mailNo) {
-            case 0:
+        // correo anfitrion y si es o no con Token
+        let email = 0, isToken = true
+
+        // declarar solo variables que se van a usar 
+        if (isToken) {
+            let securetoken
+        }
+        else {
+            let to, host, password, securetoken
+        }
+        switch (email) {
+            case 0: // funcionando
                 to = 'eccolexconsultores@gmail.com'
-                // host = 'smtp.gmail.com'
-                // username = to
-                // password = '00-Eccolex'
-                securetoken = 'f08f1495-5ad5-4e49-9063-1d1ebe15e90e'
+                if (!isToken) {
+                    host = 'smtp.gmail.com'
+                    password = '<secret>'
+                }
+                else
+                    securetoken = 'f08f1495-5ad5-4e49-9063-1d1ebe15e90e'
                 break
-            case 1:
+            case 1: // funcionando
                 to = 'alexudg@hotmail.com'
-                // host = 'smtp.live.com'
-                // username = to
-                // password = 'univers=I0674'
-                securetoken = 'f96ce58c-8519-4993-8a6c-5106b2278de3' // (port 587)
+                if (!isToken) {
+                    host = 'smtp.live.com'
+                    password = '<secret>'
+                }
+                else
+                    securetoken =  '73a1fed5-468d-4eb9-a873-997b55fe83ed' /*(port 25 con ssl)*/ //'18f011e5-a4a5-41a8-9eea-6c597169ef7a'/*(port 587 con ssl)*/
                 break
-            case 2:
+            case 2: // funciona solo con password para apps
+                to = 'alexudg@yahoo.com.mx'
+                if (!isToken) {
+                    host = 'smtp.mail.yahoo.com'
+                    //password = 'universI0674'
+                    password = 'qfxpdfsaexciqmvr' // solo password para app
+                }
+                else
+                    securetoken = '07161cec-8a2e-400b-bb06-6b500db7a2b8' // (port 25 con ssl)
+                break
+            case 3: // ?
                 to = 'consultoriaeccolex@hotmail.com'
-                // host = 'smtp.live.com' 
-                // username = to
-                // password = '<secret>'
-                securetoken = 'ec192db7-f075-4ad7-9d93-e4c6f6c4b838' // (port 587)
+                if (!isToken) {
+                    host = 'smtp.live.com' 
+                    password = '<secret>'
+                }
+                else
+                    securetoken = 'ec192db7-f075-4ad7-9d93-e4c6f6c4b838' // (port 587 con ssl)
                 break
         }
-        Email.send({
-            // Host: host,
-            // Username: username,
-            // Password: password,
-            SecureToken: securetoken,
+
+        // construir el objeto a ser enviado
+        let objSend
+        if (!isToken) 
+            objSend = {
+                Host: host,
+                Username: to, // es el mismo al que se envia
+                Password: password,
+            }
+        else
+            objSend = {
+                SecureToken: securetoken,
+            }
+            
+        // agregar resto del objeto
+        objSend = Object.assign(objSend, {
             To: to,
-            From: form.email.value,
+            From: to,
             Subject: 'Web de Eccolex',
             Body: 'De: ' + form.name.value + '<br/>' + 
                   'Correo: ' + form.email.value + '<br/>' + 
                   'Whatsapp: ' + form.tel.value + '<br/>' +
                   '<hr/>' + 
-                  form.message.value,       
-                
-                // datos adjuntos   
-                /*Attachments : [
-	            {
-		            name : "smtpjs.png",
-		            path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
-	            }]*/        
-        }).then(
+                  form.message.value,
+
+            /*/datos adjuntos   
+            Attachments : [{
+                name : "smtpjs.png",
+                path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+            }]
+            //*/
+        })
+
+        console.log(objSend)
+
+        // smtp.js
+        Email.send(
+            objSend // objeto con datos de envio
+        ).then(
             message => {
                 //console.log(message)
                 form.reset();
@@ -132,7 +173,7 @@
                     submit.disabled = false
                     submit.style.backgroundColor = "rgb(135, 138, 0)"
                     result.style.display = "none"
-                }, 10000)
+                }, 6000)
             }
         );
     }
