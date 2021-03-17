@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="./img/logoTextoDerechaSinFondo256x108px.png" alt="logotipo"></a>
+        <a href="index.html"><img src="./includes/img/logoTextoDerechaSinFondo256x108px.png" alt="logotipo"></a>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="servicios.html">Servicios</a>
@@ -41,7 +41,7 @@
                 <nav>
                     <a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="contacto.html">Contacto</a>
                 </nav>
-                <a href="https://api.whatsapp.com/send?phone=523334408509&text=Visito su sitio web, me interesan su servicios" target="_blank"><img src="./img/whatsapp24px.png" alt="whatsapp"></a>
+                <a href="https://api.whatsapp.com/send?phone=523334408509&text=Visito su sitio web, me interesan su servicios" target="_blank"><img src="./includes/img/whatsapp24px.png" alt="whatsapp"></a>
             </div>
             <div class="footer-right">
                 <p>Tel. 33-3440-8509</p>
@@ -65,53 +65,36 @@
         submit.style.backgroundColor = "silver"
 
         // smtp.js
-        let to = 'alexudg@gmail.com'
-        let host, username, password, securetoken
-        switch (to) {
-            case 'eccolexconsultores@gmail.com':
-                host = 'smtp.gmail.com'
-                username = 'eccolexconsultores'
-                password = '00-Eccolex'
+        let mailNo = 0
+        let to, host, username, password, securetoken
+        switch (mailNo) {
+            case 0:
+                to = 'eccolexconsultores@gmail.com'
+                // host = 'smtp.gmail.com'
+                // username = to
+                // password = '00-Eccolex'
                 securetoken = 'f08f1495-5ad5-4e49-9063-1d1ebe15e90e'
                 break
-            case 'alexudg@gmail.com':
-                host = 'smtp.gmail.com'
-                username = 'alexudg'
-                password = 'univers=I0674'
-                //securetoken = 'f08f1495-5ad5-4e49-9063-1d1ebe15e90e'
+            case 1:
+                to = 'alexudg@hotmail.com'
+                // host = 'smtp.live.com'
+                // username = to
+                // password = 'univers=I0674'
+                securetoken = '46f761cf-29ff-46d0-a369-90c2a9c63bd1'
+                break
+            case 2:
+                to = 'consultoriaeccolex@hotmail.com'
+                // host = 'smtp.live.com' 
+                // username = to
+                // password = '<secret>'
+                securetoken = 'ec192db7-f075-4ad7-9d93-e4c6f6c4b838' // (port 542)
                 break
         }
         Email.send({
-                /*// alexudg@gmail.com
-                Host: 'smtp.gmail.com',
-                Username: 'alexudg',
-                Password: 'univers=I0674',
-                //SecureToken: 'd818c435-3777-4f88-be69-df0439670db6', // (pto 25)
-                //*/
-
-
-                /*// alexudg@hotmail.com
-                email = 'alexudg@hotmail.com'
-                Host: 'smtp.live.com', 
-                Username: email,
-                Password: '<secret>',
-                SecureToken: '46f761cf-29ff-46d0-a369-90c2a9c63bd1', // (pto 25) creado en smtpjs.com    
-                */
-
-                /*// consultoriaeccolex@hotmail.com
-                Host: 'smtp.live.com', 
-                Username: email,
-                Password: '<secret>',
-                SecureToken: 'ec192db7-f075-4ad7-9d93-e4c6f6c4b838', // (Host + Username + Password + Port) creado en smtpjs.com    
-                */
-
-                
-
-                   
-            Host: host,
-            Username: username,
-            Password: password,
-            //SecureToken: securetoken,
+            // Host: host,
+            // Username: username,
+            // Password: password,
+            SecureToken: securetoken,
             To: to,
             From: form.email.value,
             Subject: 'Web de Eccolex',
@@ -136,8 +119,9 @@
                     result.style.backgroundColor = "aquamarine"
                 }   
                 else {
-                    result.innerHTML = 'Error al enviar mensaje!<br/>' + message
+                    result.innerHTML = 'Error al enviar mensaje'
                     result.style.backgroundColor = "salmon"
+                    console.log(message)
                 }             
                 // mostrar mensaje
                 result.style.display = "block"

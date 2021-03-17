@@ -39,7 +39,7 @@ main {
     /* border: 1px solid red; */
     width: 60%;
     /* height: 150px; */
-    background-image: url("../../img/edificios1100x615px.png"); /* desde la ubicacion de este .css */ 
+    background-image: url("../../includes/img/edificios1100x615px.png"); /* desde la ubicacion de este .css */ 
     background-size: 100%;
     background-position: center 70%; /* x y */
     background-repeat: no-repeat;   
@@ -111,18 +111,18 @@ main {
     }
 
     .row-tryptich > div:nth-child(1) > h4 {        
-        background-image: url("../../img/banda-a635x155px.png");              
+        background-image: url("../../includes/img/banda-a635x155px.png");              
         padding-top: 15px;
     }
 
     .row-tryptich > div:nth-child(2) > h4 {        
-        background-image: url("../../img/banda-b635x155px.png"); 
+        background-image: url("../../includes/img/banda-b635x155px.png"); 
         margin-top: 20px;       
         padding-top: 25px;      
     }
 
     .row-tryptich > div:nth-child(3) > h4 {        
-        background-image: url("../../img/banda-c635x155px.png"); 
+        background-image: url("../../includes/img/banda-c635x155px.png"); 
         margin-top: 20px;
         padding-top: 15px;             
     }
